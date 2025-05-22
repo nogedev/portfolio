@@ -6,11 +6,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
+    "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.8.0",
-    "preact": "^10.26.6"
+    "preact": "^10.26.6",
+    "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
