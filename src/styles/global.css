@@ -53,4 +53,23 @@
   .small {
     font-size: clamp(0.875rem, calc(0.75rem + 0.5vw), 1rem);
   }
+
+  button {
+    cursor: pointer;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
 }
