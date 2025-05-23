@@ -1,0 +1,47 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  tags?: string[];
+  class?: string;
+}
+const { href, title, tags = [], class: extraClass = "" } = Astro.props as Props;
+---
+
+<a
+  href={href}
+  class={`group flex justify-between items-center pb-8 ${extraClass}`}
+>
+  <div class="flex-1 min-w-0">
+    <div class="space-y-2">
+      <h2
+        class="whitespace-normal text-title-3 relative inline-block border-b-2 border-transparent transition-border duration-300 group-hover:border-black"
+      >
+        {title}
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {
+          tags.map((tag) => (
+            <span class="inline-flex items-center uppercase bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600">
+              {tag}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="size-6 rotate-45 transition-all duration-300 ease-in-out group-hover:scale-110 flex-shrink-0 ml-4"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59"
+    ></path>
+  </svg>
+</a>

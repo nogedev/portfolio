@@ -1,0 +1,21 @@
+---
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+
+const { title, cta, titleClass = "text-title-2", ctaExternal } = Astro.props;
+---
+
+<div class={`mb-8 flex w-full items-center justify-between gap-4 `}>
+  <div class="min-w-0 flex-1">
+    <h2 class={`uppercase ${titleClass}`}>
+      {title}
+    </h2>
+  </div>
+
+  {
+    cta && (
+      <ButtonLink href={cta.href} external={ctaExternal} class="uppercase">
+        {cta.text}
+      </ButtonLink>
+    )
+  }
+</div>

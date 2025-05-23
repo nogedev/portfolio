@@ -1,5 +1,9 @@
 ---
-const { padding = "", border = false, class: extraClass = "" } = Astro.props;
+const {
+  padding = "py-32",
+  border = true,
+  class: extraClass = "",
+} = Astro.props;
 const borderClasses = border ? "border-b border-gray-100" : "";
 ---
 
