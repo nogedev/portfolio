@@ -8,8 +8,8 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Open Sans";
-  src: url("/fonts/opensans.woff2") format("woff2");
+  font-family: "Noto Sans";
+  src: url("/fonts/notosans.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -17,12 +17,10 @@
 
 @layer base {
   body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Noto Sans", sans-serif;
     font-size: clamp(1rem, calc(0.75rem + 1vw), 1.25rem);
     scroll-behavior: smooth;
     background-color: white;
-    line-height: 1.625;
-    letter-spacing: -0.025em;
     color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -32,26 +30,44 @@
     background-color: black;
     color: white;
   }
-
-  h1,
-  h2 {
+  /* --- TITLES --- */
+  .text-title-1 {
     font-family: "Archivo Black", sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 1.2;
   }
 
-  h1 {
-    font-size: clamp(1.75rem, calc(1.25rem + 2.5vw), 3.5rem);
+  .text-title-2 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
   }
 
-  h2 {
-    font-size: clamp(1.5rem, calc(1rem + 2vw), 3rem);
+  .text-title-3 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.2;
   }
 
-  .display {
-    font-size: clamp(2rem, calc(1.5rem + 3vw), 4rem);
+  /* --- PARAGRAPHS --- */
+  p {
+    font-size: clamp(1.5rem, 2vw, 3rem);
   }
 
-  .small {
-    font-size: clamp(0.875rem, calc(0.75rem + 0.5vw), 1rem);
+  .text-large {
+    font-size: clamp(1.75rem, 2.5vw, 3.25rem);
+  }
+
+  .text-medium {
+    font-size: 1.25rem;
+  }
+
+  .text-small {
+    font-size: 1rem;
+  }
+
+  .text-xsmall {
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
   }
 
   button {

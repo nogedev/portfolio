@@ -1,0 +1,33 @@
+---
+import ExternalLink from "@/components/ui/ExternalLink.astro";
+
+const {
+  labelColorText = "text-black/75",
+  linkColorText = "text-black",
+  hoverColorText = "hover:text-black/40",
+} = Astro.props;
+
+const connectLinksItems = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/georges-nodari/",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/ngeorges-dev",
+  },
+];
+---
+
+<p class={`text-xsmall ${labelColorText}`}>Let's connect</p>
+<div class="flex gap-8 font-medium">
+  {
+    connectLinksItems.map((link) => (
+      <ExternalLink
+        href={link.href}
+        text={link.name}
+        className={`${linkColorText} ${hoverColorText}`}
+      />
+    ))
+  }
+</div>

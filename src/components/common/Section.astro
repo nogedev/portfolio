@@ -1,0 +1,12 @@
+---
+const { padding = "", border = false, class: extraClass = "" } = Astro.props;
+const borderClasses = border ? "border-b border-gray-100" : "";
+---
+
+<section
+  class={`w-full px-4 sm:px-6 lg:px-8 ${padding} ${borderClasses} ${extraClass}`}
+>
+  <div class="mx-auto max-w-7xl">
+    <slot />
+  </div>
+</section>
