@@ -1,4 +1,7 @@
 ---
+import Section from "@/components/common/Section.astro";
+import ButtonLink from "@/components/ui/ButtonLink.astro";
+import Layout from "@/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import { getCollection } from "astro:content";
@@ -15,7 +18,131 @@ type Props = CollectionEntry<"works">;
 
 const work = Astro.props;
 
-const { Content } = await render(work);
+const {
+  industry,
+  client,
+  year,
+  heroImage,
+  title,
+  images,
+  websiteUrl,
+  repoUrl,
+  about,
+  challenge,
+  result,
+} = work.data;
+
+const infoItems = [
+  { label: "Industry", value: industry ?? "N/A" },
+  { label: "Client", value: client ?? "N/A" },
+  { label: "Year", value: year ?? "N/A" },
+];
 ---
 
-<h2>{work.data.title}</h2>
+<Layout>
+  <Section padding="pt-10 pb-32">
+    <div class="mb-10 w-max text-pretty sm:ml-auto sm:text-left">
+      <dl>
+        {
+          infoItems.map(({ label, value }) => (
+            <div class="flex items-center gap-4 uppercase">
+              <dt class="text-black/30 text-sm">{label}:</dt>
+              <dd class="text-sm">{value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+    <div class="gap-4 flex flex-col sm:flex-row items-start sm:items-center">
+      <img
+        src={heroImage}
+        alt={`${title} project hero image`}
+        class="aspect-video w-full sm:w-1/2 object-cover"
+        loading="lazy"
+      />
+      <h1 class="sm:mt-0 sm:ml-6 text-title-2 font-medium text-pretty sm:w-1/2">
+        {title}
+      </h1>
+    </div>
+  </Section>
+  <Section title="about">
+    <div class="md:flex">
+      {
+        (websiteUrl || repoUrl) && (
+          <div class="hidden md:block md:w-1/2 md:mr-6 space-y-2">
+            {websiteUrl && (
+              <ButtonLink href={websiteUrl} class="w-full" external>
+                view website
+              </ButtonLink>
+            )}
+            {repoUrl && (
+              <ButtonLink href={repoUrl} class="w-full" external>
+                view repo
+              </ButtonLink>
+            )}
+          </div>
+        )
+      }
+      {
+        about && (
+          <div class="md:ml-auto md:w-max md:text-left">
+            <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+              {about}
+            </p>
+          </div>
+        )
+      }
+      {
+        (websiteUrl || repoUrl) && (
+          <div class="mt-6 flex w-full items-center justify-between gap-4 md:hidden">
+            {websiteUrl && (
+              <ButtonLink href={websiteUrl} external>
+                view website
+              </ButtonLink>
+            )}
+            {repoUrl && (
+              <ButtonLink href={repoUrl} external>
+                view repo
+              </ButtonLink>
+            )}
+          </div>
+        )
+      }
+    </div>
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        images?.map((src, i) => (
+          <img
+            src={src}
+            alt={`${title} image ${i + 1}`}
+            class="aspect-square w-full object-cover"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </Section>
+  {
+    challenge && (
+      <Section title="challenge">
+        <div class="md:ml-auto md:w-max md:text-left">
+          <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+            {challenge}
+          </p>
+        </div>
+      </Section>
+    )
+  }
+
+  {
+    result && (
+      <Section title="result">
+        <div class="md:ml-auto md:w-max md:text-left">
+          <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+            {result}
+          </p>
+        </div>
+      </Section>
+    )
+  }
+</Layout>

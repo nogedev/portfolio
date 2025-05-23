@@ -1,8 +1,6 @@
 ---
-import HeadingRow from "@/components/common/HeadingRow.astro";
 import Section from "@/components/common/Section.astro";
 import WorkCollection from "@/components/work/WorkCollection.astro";
-import WorkSection from "@/components/work/WorkSection.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -10,7 +8,7 @@ import Layout from "@/layouts/Layout.astro";
   title="Works"
   description="Welcome to my works page. Here you can find all my works."
 >
-  <Section title="Works" titleClass="text-title-1" >
-<WorkCollection
+  <Section padding="pt-10 pb-32" title="Works" titleClass="text-title-1">
+    <WorkCollection />
   </Section>
 </Layout>

@@ -1,10 +1,10 @@
 ---
-interface Props {
+type Props = {
   href: string;
   title: string;
   tags?: string[];
   class?: string;
-}
+};
 const { href, title, tags = [], class: extraClass = "" } = Astro.props as Props;
 ---
 
