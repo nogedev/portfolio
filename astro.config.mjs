@@ -7,9 +7,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
 
+const siteUrl = import.meta.env.SITE_URL || "http://localhost:4321";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+  site: siteUrl,
   integrations: [preact(), mdx()],
 
   vite: {
