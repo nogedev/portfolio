@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 
 import netlify from "@astrojs/netlify";
 
-const siteUrl = process.env.SITE_URL;
+const siteUrl = process.env.SITE_URL || "http://localhost:4321";
 
 // https://astro.build/config
 export default defineConfig({
