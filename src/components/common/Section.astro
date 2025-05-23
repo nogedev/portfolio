@@ -1,8 +1,15 @@
 ---
+import HeadingRow from "@/components/common/HeadingRow.astro";
+
 const {
   padding = "py-32",
   border = true,
   class: extraClass = "",
+  title,
+  as = "h2",
+  titleClass = "text-title-2",
+  cta,
+  ctaExternal = false,
 } = Astro.props;
 const borderClasses = border ? "border-b border-gray-100" : "";
 ---
@@ -11,6 +18,17 @@ const borderClasses = border ? "border-b border-gray-100" : "";
   class={`w-full px-4 sm:px-6 lg:px-8 ${padding} ${borderClasses} ${extraClass}`}
 >
   <div class="mx-auto max-w-7xl">
+    {
+      title && (
+        <HeadingRow
+          title={title}
+          as={as}
+          titleClass={titleClass}
+          cta={cta}
+          ctaExternal={ctaExternal}
+        />
+      )
+    }
     <slot />
   </div>
 </section>

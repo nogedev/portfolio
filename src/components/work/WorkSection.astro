@@ -1,43 +1,9 @@
 ---
 import Section from "@/components/common/Section.astro";
-import HeadingRow from "@/components/common/HeadingRow.astro";
 import WorkCard from "@/components/work/WorkCard.astro";
-
-const works = [
-  {
-    href: "/works/mindcraft-studio",
-    title: "Mindcraft Studio",
-    tags: [".NET", "React", "Typescript"],
-  },
-  {
-    href: "/works/nordeo",
-    title: "Nordeo - The Future of Work",
-    tags: ["Flutter"],
-  },
-  {
-    href: "/works/project-three",
-    title: "Gal Bank",
-    tags: ["Java", "Spring Boot", "React", "Typescript"],
-  },
-];
+import WorkCollection from "@/components/work/WorkCollection.astro";
 ---
 
-<Section>
-  <HeadingRow
-    title="works"
-    titleClass="text-title-2"
-    cta={{
-      text: "view all",
-      href: "/works",
-    }}
-  />
-  <div class="space-y-8
-    divide-y
-    divide-gray-100">
-    {
-      works.map((work) => (
-        <WorkCard href={work.href} title={work.title} tags={work.tags} />
-      ))
-    }
-  </div>
+<Section title="Works" cta={{ text: "view all", href: "/works" }}>
+  <WorkCollection />
 </Section>
