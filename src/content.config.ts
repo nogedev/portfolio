@@ -19,4 +19,19 @@ const works = defineCollection({
   }),
 });
 
-export const collections = { works };
+const about = defineCollection({
+  schema: z.object({
+    introText: z.string(),
+    imageWithText: z
+      .object({
+        imageUrl: z.string(),
+        text: z.string(),
+      })
+      .optional(),
+    services: z.array(z.string()).optional(),
+    stack: z.array(z.string()).optional(),
+    published: z.boolean().default(true),
+  }),
+});
+
+export const collections = { works, about };

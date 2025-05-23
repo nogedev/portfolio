@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "http://localhost:4321",
   integrations: [preact(), mdx()],
 
   vite: {
