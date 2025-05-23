@@ -3,7 +3,9 @@ import { defineCollection, z } from "astro:content";
 const works = defineCollection({
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z
+      .string()
+      .max(160, "Description is too long. Max 160 characters allowed."),
     stack: z.array(z.string()),
     year: z.number().int().optional(),
     heroImage: z.string().optional(),

@@ -30,6 +30,7 @@ const {
   about,
   challenge,
   result,
+  description,
 } = work.data;
 
 const infoItems = [
@@ -39,7 +40,10 @@ const infoItems = [
 ];
 ---
 
-<Layout>
+<Layout
+  title=`${title}`
+  description={description ?? "Portfolio work by Noge - Nodari Georges"}
+>
   <Section padding="pt-10 pb-32">
     <div class="mb-10 w-max text-pretty sm:ml-auto sm:text-left">
       <dl>
