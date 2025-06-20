@@ -108,7 +108,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-7xl font-bold text-black uppercase hover:text-black/40 transition-colors duration-300 ease-in-out"
+              className="text-5xl sm:text-7xl font-bold text-black uppercase hover:text-black/40 transition-colors duration-300 ease-in-out"
             >
               {item.name}
             </a>
