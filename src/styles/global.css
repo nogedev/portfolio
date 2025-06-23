@@ -34,19 +34,16 @@
   .text-title-1 {
     font-family: "Archivo Black", sans-serif;
     font-size: clamp(3rem, 10vw, 8rem);
-    line-height: 1.2;
   }
 
   .text-title-2 {
     font-family: "Archivo Black", sans-serif;
     font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.2;
   }
 
   .text-title-3 {
     font-family: "Archivo Black", sans-serif;
     font-size: clamp(1.25rem, 3vw, 2rem);
-    line-height: 1.2;
   }
 
   /* --- PARAGRAPHS --- */
