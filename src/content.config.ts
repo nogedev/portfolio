@@ -5,7 +5,7 @@ const works = defineCollection({
     title: z.string(),
     description: z
       .string()
-      .max(160, "Description is too long. Max 160 characters allowed."),
+      .max(300, "Description is too long. Max 300 characters allowed."),
     stack: z.array(z.string()),
     year: z.number().int().optional(),
     heroImage: z.string().optional(),
