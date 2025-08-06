@@ -8,11 +8,11 @@ const baseUrl = Astro.site;
 const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
 ---
 
-<p class="w-full text-medium md:text-justify text-pretty md:w-1/2">
+<p class="w-full text-medium md:text-justify tracking-tighter text-pretty md:w-1/2">
   {introText}
 </p>
 <div
-  class="mt-10 md:mt-20 flex flex-col items-center justify-center gap-8 md:flex-row"
+  class="mt-10 md:mt-20 flex flex-col items-center tracking-tighter justify-center gap-8 md:flex-row"
 >
   <img
     src={imageUrl}
@@ -20,7 +20,7 @@ const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
     class="aspect-square h-96 object-cover"
   />
   <p
-    class="text-medium max-w-md md:text-justify font-medium text-pretty md:w-1/2"
+    class="text-medium max-w-md md:text-justify tracking-tighter font-medium text-pretty md:w-1/2"
   >
     {
       imageWithText?.text.split("\n").map((line) => (

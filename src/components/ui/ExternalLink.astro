@@ -9,7 +9,7 @@ type Props = {
 const { href, text, className = "", textClassName = "" } = Astro.props as Props;
 
 const baseLinkClasses =
-  "group inline-flex items-center gap-1.5 text-lg font-medium uppercase transition-all duration-300 ease-in-out";
+  "group inline-flex items-center tracking-tighter gap-1.5 text-lg font-medium uppercase transition-all duration-300 ease-in-out";
 const linkColor = "text-black hover:text-black/40";
 const combinedClassName = `${baseLinkClasses} ${linkColor} ${className}`;
 ---

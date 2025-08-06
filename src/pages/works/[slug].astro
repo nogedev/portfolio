@@ -43,12 +43,12 @@ const infoItems = [
   title=`${title}`
   description={description ?? "Portfolio work by Noge - Nodari Georges"}
 >
-  <Section padding="pt-10 pb-32">
+  <Section padding="pt-10 pb-32 ">
     <div class="mb-10 w-max text-pretty sm:ml-auto sm:text-left">
       <dl>
         {
           infoItems.map(({ label, value }) => (
-            <div class="flex items-center gap-4 uppercase">
+            <div class="flex items-center gap-4 uppercase tracking-tighter">
               <dt class="text-black/30 text-sm">{label}:</dt>
               <dd class="text-sm">{value}</dd>
             </div>
@@ -63,7 +63,7 @@ const infoItems = [
         class="aspect-video w-full sm:w-1/2 object-cover"
         loading="lazy"
       />
-      <h1 class="sm:mt-0 sm:ml-6 text-title-2 font-medium text-pretty sm:w-1/2">
+      <h1 class="sm:mt-0 sm:ml-6 text-title-2 font-medium tracking-tighter text-pretty sm:w-1/2">
         {title}
       </h1>
     </div>
@@ -89,7 +89,7 @@ const infoItems = [
       {
         about && (
           <div class="md:ml-auto md:w-max md:text-left">
-            <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+            <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
               {about}
             </p>
           </div>
@@ -129,7 +129,7 @@ const infoItems = [
     challenge && (
       <Section title="challenge">
         <div class="md:ml-auto md:w-max md:text-left">
-          <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+          <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
             {challenge}
           </p>
         </div>
@@ -141,7 +141,7 @@ const infoItems = [
     result && (
       <Section title="result">
         <div class="md:ml-auto md:w-max md:text-left">
-          <p class="text-medium md:text-justify font-medium text-pretty md:max-w-3xl">
+          <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
             {result}
           </p>
         </div>

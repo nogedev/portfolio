@@ -22,15 +22,19 @@ const { services = [], stack = [] } = about?.data ?? {};
     <AboutMe />
   </Section>
   <Section title="services">
-    <div class="mt-10 sm:mt-28 text-title-2 uppercase sm:text-center">
+    <div
+      class="mt-10 sm:mt-28 text-title-2 uppercase tracking-tighter sm:text-center"
+    >
       {services.map((service) => <h1>{service}</h1>)}
     </div>
   </Section>
   <Section title="stack">
-    <div class="mt-10 sm:mt-28 uppercase text-title-2 sm:text-center">
+    <div
+      class="mt-10 sm:mt-28 uppercase tracking-tighter text-title-2 sm:text-center"
+    >
       {
         stack.map((tech) => (
-          <h1 class="w-fit cursor-pointer items-center transition-opacity duration-300 ease-in-out hover:opacity-30 sm:mx-auto">
+          <h1 class="w-fit cursor-pointer  items-center transition-opacity duration-300 ease-in-out hover:opacity-30 sm:mx-auto">
             <h1>{tech}</h1>
           </h1>
         ))
