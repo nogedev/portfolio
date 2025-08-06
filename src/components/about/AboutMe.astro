@@ -8,9 +8,7 @@ const baseUrl = Astro.site;
 const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
 ---
 
-<p
-  class="w-full text-medium md:text-justify  text-pretty md:w-1/2"
->
+<p class="w-full text-medium md:text-justify text-pretty md:w-1/2">
   {introText}
 </p>
 <div
@@ -24,6 +22,13 @@ const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
   <p
     class="text-medium max-w-md md:text-justify font-medium text-pretty md:w-1/2"
   >
-    {imageWithText?.text}
+    {
+      imageWithText?.text.split("\n").map((line) => (
+        <>
+          {line}
+          <br />
+        </>
+      ))
+    }
   </p>
 </div>

@@ -6,16 +6,12 @@ import { getEntry } from "astro:content";
 
 const about = await getEntry("about", "about-me");
 
-const { imageWithText, services = [], stack = [] } = about?.data ?? {};
-const baseUrl = Astro.site;
-const imageUrl = imageWithText?.imageUrl
-  ? `${baseUrl}${imageWithText.imageUrl}`
-  : "";
+const { services = [], stack = [] } = about?.data ?? {};
 ---
 
 <Layout
   title="About me"
-  description=".NET developer passionate about building scalable, modern applications. Explore my services and technology stack."
+  description="fullstack developer [node/react] passionate about building scalable, modern applications. Explore my services and technology stack."
 >
   <Section
     padding="pt-10 pb-32"
