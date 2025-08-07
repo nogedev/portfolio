@@ -8,7 +8,9 @@ const baseUrl = Astro.site;
 const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
 ---
 
-<p class="w-full text-medium md:text-justify tracking-tighter text-pretty md:w-1/2">
+<p
+  class="w-full text-medium md:text-justify tracking-tighter text-pretty md:w-1/2"
+>
   {introText}
 </p>
 <div
@@ -20,7 +22,7 @@ const imageUrl = `${baseUrl}${imageWithText?.imageUrl}`;
     class="aspect-square h-96 object-cover"
   />
   <p
-    class="text-medium max-w-md md:text-justify tracking-tighter font-medium text-pretty md:w-1/2"
+    class="text-medium max-w-md md:text-justify tracking-tighter text-pretty md:w-1/2"
   >
     {
       imageWithText?.text.split("\n").map((line) => (
