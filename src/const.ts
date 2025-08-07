@@ -9,6 +9,6 @@ export const connectLinksItems = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/noge-dev",
+    href: "https://github.com/nogedev",
   },
 ];
