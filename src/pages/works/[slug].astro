@@ -1,9 +1,9 @@
 ---
 import Section from "@/components/common/Section.astro";
-import ButtonLink from "@/components/ui/ButtonLink.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import ExternalLink from "@/components/ui/ExternalLink.astro";
 
 export async function getStaticPaths() {
   const works = await getCollection("works");
@@ -28,7 +28,7 @@ const {
   repoUrl,
   about,
   challenge,
-  result,
+  features,
   description,
 } = work.data;
 
@@ -44,12 +44,12 @@ const infoItems = [
   description={description ?? "Portfolio work by Noge - Nodari Georges"}
 >
   <Section padding="pt-10 pb-32 ">
-    <div class="mb-10 w-max text-pretty sm:ml-auto sm:text-left">
+    <div class="mb-10 w-max text-pretty">
       <dl>
         {
           infoItems.map(({ label, value }) => (
-            <div class="flex items-center gap-4 uppercase tracking-tighter">
-              <dt class="text-black/30 text-sm">{label}:</dt>
+            <div class="flex items-center gap-1 uppercase tracking-tighter">
+              <dt class="text-black/50 text-sm">{label} :</dt>
               <dd class="text-sm">{value}</dd>
             </div>
           ))
@@ -60,10 +60,12 @@ const infoItems = [
       <img
         src={heroImage}
         alt={`${title} project hero image`}
-        class="aspect-video w-full sm:w-1/2 object-cover"
+        class="aspect-square w-full object-contain sm:w-1/2"
         loading="lazy"
       />
-      <h1 class="sm:mt-0 sm:ml-6 text-title-2 font-medium tracking-tighter text-pretty sm:w-1/2">
+      <h1
+        class="sm:mt-0 sm:ml-6 text-title-2 font-medium tracking-tighter text-pretty sm:w-1/2"
+      >
         {title}
       </h1>
     </div>
@@ -71,54 +73,41 @@ const infoItems = [
   <Section title="about">
     <div class="md:flex">
       {
-        (websiteUrl || repoUrl) && (
-          <div class="hidden md:block md:w-1/2 md:mr-6 space-y-2">
-            {websiteUrl && (
-              <ButtonLink href={websiteUrl} class="w-full" external>
-                view website
-              </ButtonLink>
-            )}
-            {repoUrl && (
-              <ButtonLink href={repoUrl} class="w-full" external>
-                view repo
-              </ButtonLink>
-            )}
-          </div>
-        )
-      }
-      {
         about && (
-          <div class="md:ml-auto md:w-max md:text-left">
+          <div class="">
             <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
               {about}
             </p>
-          </div>
-        )
-      }
-      {
-        (websiteUrl || repoUrl) && (
-          <div class="mt-6 flex w-full items-center justify-between gap-4 md:hidden">
-            {websiteUrl && (
-              <ButtonLink href={websiteUrl} external>
-                view website
-              </ButtonLink>
-            )}
-            {repoUrl && (
-              <ButtonLink href={repoUrl} external>
-                view repo
-              </ButtonLink>
+            {(websiteUrl || repoUrl) && (
+              <div class="flex  gap-6">
+                {websiteUrl && (
+                  <ExternalLink
+                    href={websiteUrl}
+                    text="View website"
+                    className="mt-4 inline-block text-pretty hover:text-black/40"
+                  />
+                )}
+                {repoUrl && (
+                  <ExternalLink
+                    href={repoUrl}
+                    text="View Repo"
+                    className="mt-4 inline-block text-pretty hover:text-black/40"
+                  />
+                )}
+              </div>
             )}
           </div>
         )
       }
     </div>
+
     <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
       {
         images?.map((src, i) => (
           <img
             src={src}
             alt={`${title} image ${i + 1}`}
-            class="aspect-square w-full object-cover"
+            class="aspect-square w-full object-contain"
             loading="lazy"
           />
         ))
@@ -126,23 +115,27 @@ const infoItems = [
     </div>
   </Section>
   {
-    challenge && (
-      <Section title="challenge">
-        <div class="md:ml-auto md:w-max md:text-left">
-          <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
-            {challenge}
-          </p>
+    features && (
+      <Section title="Features">
+        <div class="md:ml-auto ">
+          <ul class="list-disc list-inside space-y-2 md:max-w-3xl md:text-justify">
+            {features.map((feature) => (
+              <li class="text-medium tracking-tight font-medium text-pretty">
+                {feature}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
     )
   }
 
   {
-    result && (
-      <Section title="result">
-        <div class="md:ml-auto md:w-max md:text-left">
+    challenge && (
+      <Section title="challenge">
+        <div class="">
           <p class="text-medium md:text-justify tracking-tighter font-medium text-pretty md:max-w-3xl">
-            {result}
+            {challenge}
           </p>
         </div>
       </Section>

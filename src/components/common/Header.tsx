@@ -50,7 +50,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`text-lg font-semibold uppercase tracking-tighter text-black hover:text-black/40 transition-colors duration-300 group relative`}
+                    className={`text-lg font-semibold tracking-tighter text-black hover:text-black/40 transition-colors duration-300 group relative`}
                   >
                     {item.name}
                     <span
